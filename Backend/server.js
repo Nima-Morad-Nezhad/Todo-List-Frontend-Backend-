@@ -1,11 +1,15 @@
 const express = require('express')
-const mongoose = require("./config/connect")
+const main = require("./config/connect")
 const app = express()
-const port = 3000
-
+const cors = require("cors")
+const port = 8000
+const TodoTask = require("./Model/listModel")
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
