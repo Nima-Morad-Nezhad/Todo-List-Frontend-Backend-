@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const todoTaskSchema = new mongoose.Schema({
    task: {type : String, require:true},
-    content:{
+    status:{
         type: String,
         require: true
     },
@@ -11,4 +11,5 @@ const todoTaskSchema = new mongoose.Schema({
         default: Date.now
     }
 })
-module.exports = mongoose.model("TodoTask", todoTaskSchema);
+const TodoList = mongoose.model("TodoTask" , todoTaskSchema)
+module.exports = TodoList;
