@@ -6,10 +6,9 @@ const todoTaskSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    date:{
-        type:Date ,
-        default: Date.now
-    }
+    deadline: {
+        type: Date,
+    },
 })
 const TodoList = mongoose.model("TodoTask" , todoTaskSchema)
 module.exports = TodoList;

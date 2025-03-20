@@ -17,6 +17,7 @@ app.post("/add", async(req,res) =>{
  await TodoTask.create({
     task: req.body.task,
     status: req.body.status,
+    deadline: req.body.deadline
   })
   .then((todo) =>{res.status(201).json(todo);
     console.log("added successfully!")
@@ -31,7 +32,8 @@ app.put("/update/:id", async (req,res)=>{
   const id = req.params.id;
   const updateData ={
     task: req.body.task,
-    status: req.body.status
+    status: req.body.status,
+    deadline: req.body.deadline
   };
   await TodoTask.findByIdAndUpdate(id,updateData).then((todo) =>{ res.status(201).json(todo);
     console.log("Your task is updated!")
